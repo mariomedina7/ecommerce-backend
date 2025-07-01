@@ -1,0 +1,29 @@
+<div class="auth-page register">
+  <div class="auth-form-container register">
+    <h2>Crear Cuenta</h2>
+    <form action="/api/sessions/register" method="POST">
+      <div class="form-group">
+        <label for="first_name">Nombre</label>
+        <input type="text" id="first_name" name="first_name" class="form-control" required placeholder="Tu primer nombre" />
+      </div>
+      <div class="form-group">
+        <label for="last_name">Apellido</label>
+        <input type="text" id="last_name" name="last_name" class="form-control" required placeholder="Tu primer apellido" />
+      </div>
+      <div class="form-group">
+        <label for="age">Edad</label>
+        <input type="number" id="age" name="age" class="form-control" required placeholder="25" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" required placeholder="correo@ejemplo.com" />
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" class="form-control" required placeholder="Mínimo 4 caracteres" minlength="4" />
+      </div>
+      <button type="submit">Registrarse</button>
+    </form>
+    <a class="auth-link" href="/login">¿Ya tienes cuenta? Inicia sesión</a>
+  </div>
+</div>
