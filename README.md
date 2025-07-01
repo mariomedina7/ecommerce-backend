@@ -155,7 +155,7 @@ Content-Type: application/json
   last_name: String (requerido),
   age: Number (requerido),
   email: String (requerido, único),
-  password: String (requerido, encriptado),
+  password: String (requerido, hasheado),
   role: String (enum: ['USER', 'ADMIN', 'SUPERADMIN']),
   cart: ObjectId (referencia a carrito)
 }
