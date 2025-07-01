@@ -59,7 +59,7 @@ server/
 
 ### 1. Clonar el repositorio
 ```bash
-git clone <tu-repositorio-url>
+git clone https://github.com/mariomedina7/ecommerce-backend.git
 cd server
 ```
 
@@ -71,10 +71,10 @@ npm install
 ### 3. Configurar variables de entorno
 Crear archivo `.env` en la raíz del proyecto:
 ```env
-MONGODB_URI=mongodb://localhost:27017/tu_base_de_datos
-JWT_SECRET=tu_jwt_secret_super_seguro
+MONGODB_URI=mongodb://localhost:27017/base_de_datos
+JWT_SECRET=jwt_secret_seguro
 JWT_EXPIRES_IN=1h
-SESSION_SECRET=tu_session_secret
+SESSION_SECRET=session_secret
 ```
 
 ### 4. Ejecutar el servidor
@@ -128,6 +128,7 @@ Content-Type: application/json
     "first_name": "Juan",
     "last_name": "Pérez",
     "email": "juan@ejemplo.com",
+    "password": "$2b$12$6FUGXXu3/I7JLfopG01rueU97ehFzrnqztasenza8G6zWCcPNRSpa",
     "role": "USER",
     "cart": {
       "_id": "64f8a1b2c3d4e5f6a7b8c9d1",
@@ -165,8 +166,7 @@ Content-Type: application/json
 {
   user: ObjectId (referencia a usuario),
   products: [{
-    product: ObjectId (referencia a producto),
-    quantity: Number (mínimo 1)
+    product: ObjectId (referencia a producto)
   }],
   total: Number (default: 0)
 }
@@ -183,7 +183,3 @@ Content-Type: application/json
 ## 👨‍💻 Autor
 
 Desarrollado como parte del curso Full Stack Developer de CoderHouse.
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. 
