@@ -1,4 +1,4 @@
 export { 
     createHash, 
-    isValidPassword
+    isValidPassword,
 } from './auth.js'

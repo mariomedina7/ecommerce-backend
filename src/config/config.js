@@ -23,12 +23,18 @@ export const SECURITY_CONFIG = {
   BCRYPT_ROUNDS: parseInt(process.env.BCRYPT_ROUNDS)
 }
 
+export const EMAIL_CONFIG = {
+  EMAIL_USER : process.env.EMAIL_USER,
+  EMAIL_PASS : process.env.EMAIL_PASS
+}
+
 export const CONFIG = {
   server: SERVER_CONFIG,
   database: DB_CONFIG,
   jwt: JWT_CONFIG,
   session: SESSION_CONFIG,
-  security: SECURITY_CONFIG
+  security: SECURITY_CONFIG,
+  smtp: EMAIL_CONFIG
 }
 
 export default CONFIG 

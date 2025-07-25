@@ -5,11 +5,14 @@ export {
 } from './auth.js'
 
 export {
-    asyncHandler 
+    asyncHandler,
+    errorHandler 
 } from './error.js'
 
 export { 
     validateBody, 
     validateRequiredFields, 
-    validateEmail
+    validateEmail,
+    validateAge,
+    validateObjectId
 } from './validation.js'

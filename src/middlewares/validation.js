@@ -27,3 +27,25 @@ export const validateEmail = (req, res, next) => {
     }
     next();
 }
+
+export function validateAge(req, res, next) {
+    const { age } = req.body;
+    if (age !== undefined && (age < 0 || age > 120)) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'La edad debe estar entre 0 y 120 años'
+      });
+    }
+    next();
+}
+
+export function validateObjectId(req, res, next) {
+    const { id } = req.params;
+    if (!id || !id.match(/^[0-9a-fA-F]{24}$/)) {
+        return res.status(400).json({
+        status: 'error',
+        message: 'ID inválido'
+        });
+    }
+    next();
+}

@@ -2,6 +2,7 @@ import passport from 'passport';
 import local from 'passport-local';
 import userModel from '../../models/userModel.js';
 import cartModel from '../../models/cartModel.js';
+import ClaimsDTO from '../../dtos/claims.dto.js';
 import { createHash, isValidPassword } from '../../utils/auth.js';
 
 const LocalStrategy = local.Strategy;
@@ -67,7 +68,7 @@ const initializePassportLocal = () => {
                     return done(null, false, { message: 'Contraseña incorrecta' });
                 }
 
-                return done(null, user);
+                return done(null, new ClaimsDTO(user));
             } catch (error) {
                 return done("Error al iniciar sesión: " + error);
             }

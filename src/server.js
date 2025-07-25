@@ -1,15 +1,15 @@
 import express from 'express'
 import passport from 'passport'
 import connectMongoDB from './db/connectionDb.js';
-import { engine } from 'express-handlebars'
 import cookieParser from 'cookie-parser';
-import { publicPath, viewsPath } from './config/paths.js';
-import { SERVER_CONFIG, SESSION_CONFIG } from './config/config.js';
 import initializePassportLocal from './config/passport/passport.local.js'
 import initializeJwt from './config/passport/passport.jwt.js'
-import userRouter from './routes/user.routes.js'
-import sessionsRouter from './routes/sessions.routes.js'
+import indexRouter from './routes/index.js';
 import viewsRouter from './routes/views.routes.js'
+import { engine } from 'express-handlebars'
+import { publicPath, viewsPath } from './config/paths.js';
+import { SERVER_CONFIG, SESSION_CONFIG } from './config/config.js';
+import { errorHandler } from './middlewares/error.js';
 
 const app = express();
 
@@ -36,8 +36,9 @@ initializeJwt();
 app.use(passport.initialize());
 
 //Llamado de API's
-app.use('/api/users', userRouter);
-app.use('/api/sessions', sessionsRouter);
+app.use('/api', indexRouter)
 app.use('/', viewsRouter);
+
+app.use(errorHandler);
 
 app.listen(SERVER_CONFIG.PORT, () => console.log(`Servidor escuchando en el puerto ${SERVER_CONFIG.PORT}`))

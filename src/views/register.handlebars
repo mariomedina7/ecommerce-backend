@@ -1,29 +1,32 @@
-<div class="auth-page register">
-  <div class="auth-form-container register">
-    <h2>Crear Cuenta</h2>
-    <form action="/api/sessions/register" method="POST">
-      <div class="form-group">
-        <label for="first_name">Nombre</label>
+<link rel="stylesheet" href="/css/toastify.css">
+<script src="/js/toastify.js"></script>
+<script src="/js/register.js"></script>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card p-4 shadow" style="min-width:350px;max-width:400px;width:100%;">
+    <h2 class="mb-4 text-center">Crear Cuenta</h2>
+    <form id='registerForm' action="/api/sessions/register" method="POST">
+      <div class="mb-3">
+        <label for="first_name" class="form-label">Nombre</label>
         <input type="text" id="first_name" name="first_name" class="form-control" required placeholder="Tu primer nombre" />
       </div>
-      <div class="form-group">
-        <label for="last_name">Apellido</label>
+      <div class="mb-3">
+        <label for="last_name" class="form-label">Apellido</label>
         <input type="text" id="last_name" name="last_name" class="form-control" required placeholder="Tu primer apellido" />
       </div>
-      <div class="form-group">
-        <label for="age">Edad</label>
+      <div class="mb-3">
+        <label for="age" class="form-label">Edad</label>
         <input type="number" id="age" name="age" class="form-control" required placeholder="25" />
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
         <input type="email" id="email" name="email" class="form-control" required placeholder="correo@ejemplo.com" />
       </div>
-      <div class="form-group">
-        <label for="password">Contraseña</label>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
         <input type="password" id="password" name="password" class="form-control" required placeholder="Mínimo 4 caracteres" minlength="4" />
       </div>
-      <button type="submit">Registrarse</button>
+      <button type="submit" class="btn btn-success w-100">Registrarse</button>
     </form>
-    <a class="auth-link" href="/login">¿Ya tienes cuenta? Inicia sesión</a>
+    <a class="d-block text-center mt-3" href="/login">¿Ya tienes cuenta? Inicia sesión</a>
   </div>
 </div>
